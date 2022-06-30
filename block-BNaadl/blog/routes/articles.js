@@ -8,6 +8,7 @@ router.get("/new", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
+  req.body.tags = req.body.tags.split(",");
   Article.create(req.body, (err, createdArticle) => {
     if (err) return next(err);
     res.redirect("/articles");
@@ -25,7 +26,7 @@ router.get("/:id", (req, res, next) => {
   const id = req.params.id;
   Article.findById(id, (err, article) => {
     if (err) return next(err);
-    res.render("articleDetail");
+    res.render("articleDetail", { article });
   });
 });
 
@@ -39,6 +40,7 @@ router.get("/:id/edit", (req, res, next) => {
 
 router.post("/:id", (req, res, next) => {
   const id = req.params.id;
+  req.body.tags = req.body.tags.split(",");
   Article.findByIdAndUpdate(id, req.body, (err, updatedArticle) => {
     if (err) return next(err);
     res.redirect("/articles/" + id);

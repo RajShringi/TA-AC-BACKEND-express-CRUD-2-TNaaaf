@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Article Details</h1>
+    <h3>Title: <%= article.title %></h3>
+    <p><%= article.description %></p>
+    <p>Author: <%= article.author %></p>
+    <p>Tags: <%= article.tags %></p>
+    <p>Likes: <%= article.likes %></p>
+    <a href="/articles/<%= article.id %>/edit">Edit Article</a>
+    <a href="/articles/<%= article.id %>/delete">Delete Article</a>
+    <a href="/articles/<%= article.id %>/increment"
+      ><button>increment</button></a
+    >
+    <a href="/articles/<%= article.id %>/decrement"
+      ><button>decrement</button></a
+    >
+  </body>
+</html>
