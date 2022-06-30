@@ -55,4 +55,30 @@ router.get("/:id/delete", (req, res, next) => {
   });
 });
 
+router.get("/:id/decrement", (req, res, next) => {
+  const id = req.params.id;
+  req.body.likes += 1;
+  Article.findByIdAndUpdate(
+    id,
+    { $inc: { likes: -1 } },
+    (err, updatedArticle) => {
+      if (err) return next(err);
+      res.redirect("/articles/" + id);
+    }
+  );
+});
+
+router.get("/:id/increment", (req, res, next) => {
+  const id = req.params.id;
+  req.body.likes -= 1;
+  Article.findByIdAndUpdate(
+    id,
+    { $inc: { likes: 1 } },
+    (err, updatedArticle) => {
+      if (err) return next(err);
+      res.redirect("/articles/" + id);
+    }
+  );
+});
+
 module.exports = router;
