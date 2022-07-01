@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title><%= article.title %></title>
+  </head>
+  <body>
+    <% include partials/header2 %>
+    <div class="container">
+      <h3 class="article-title"><%= article.title %></h3>
+      <div class="mb-1">
+        <% article.tags.forEach(tag => { %>
+        <span class="tag"><%= tag %></span>
+        <% }) %>
+      </div>
+      <p class="mb-1"><%= article.description %></p>
+      <p class="mb-1 author"><%= article.author %></p>
+      <p class="mb-1 likes">
+        <i class="fa-solid fa-heart"></i> <%= article.likes %>
+      </p>
+      <a class="btn edit" href="/articles/<%= article.id %>/edit">Edit</a>
+      <a class="btn delete" href="/articles/<%= article.id %>/delete">Delete</a>
+      <a class="btn like-btn" href="/articles/<%= article.id %>/increment"
+        >Like</a
+      >
+      <!-- <a href="/articles/<%= article.id %>/decrement"
+        ><button>decrement</button></a
+      > -->
+    </div>
+  </body>
+</html>
