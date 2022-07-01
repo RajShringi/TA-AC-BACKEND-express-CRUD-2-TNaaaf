@@ -7,7 +7,7 @@ const articleSchema = new Schema(
     description: String,
     tags: [String],
     author: String,
-    likes: Number,
+    likes: { type: Number, default: 0 },
   },
   { timestamps: true }
 );
