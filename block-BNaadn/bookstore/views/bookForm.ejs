@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-700">
+    <%- include('partials/header') %>
+    <div class="container mx-auto">
+      <div class="flex justify-center items-center h-screen">
+        <form
+          action="/books"
+          method="post"
+          class="bg-gray-100 rounded shadow-lg p-4 w-2/5"
+        >
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="title"
+            placeholder="Title"
+          />
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="summary"
+            placeholder="Summary"
+          />
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="author"
+            placeholder="Author"
+          />
+
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="number"
+            name="pages"
+            placeholder="Pages"
+          />
+
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="publication"
+            placeholder="Publication"
+          />
+
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="cover_image"
+            placeholder="URL"
+          />
+
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="category"
+            placeholder="Category comma seprated"
+          />
+
+          <input
+            type="submit"
+            value="Add Book"
+            class="block cursor-pointer p-3 bg-red-400 text-white rounded w-full hover:bg-red-500"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<div class="container"></div>

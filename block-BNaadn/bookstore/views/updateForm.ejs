@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-700">
+    <%- include('partials/header') %>
+    <div class="container mx-auto">
+      <div class="flex justify-center items-center h-screen">
+        <form
+          action="/books/<%= book.id %>/"
+          method="post"
+          class="bg-gray-100 rounded shadow-lg p-4 w-2/5"
+        >
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="title"
+            placeholder="Title"
+            value="<%= book.title %>"
+          />
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="summary"
+            placeholder="Summary"
+            value="<%= book.summary %>"
+          />
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="author"
+            placeholder="Author"
+            value="<%= book.author %>"
+          />
+
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="number"
+            name="pages"
+            placeholder="Pages"
+            value="<%= book.pages %>"
+          />
+
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="publication"
+            placeholder="Publication"
+            value="<%= book.publication %>"
+          />
+
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="cover_image"
+            placeholder="URL"
+            value="<%= book.cover_image %>"
+          />
+
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="category"
+            placeholder="Category comma seprated"
+            value="<%= book.category.join(',') %>"
+          />
+
+          <input
+            type="submit"
+            value="Update Book"
+            class="block cursor-pointer p-3 bg-red-400 text-white rounded w-full hover:bg-red-500"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<div class="container"></div>
