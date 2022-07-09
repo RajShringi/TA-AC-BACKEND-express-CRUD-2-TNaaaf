@@ -1,0 +1,51 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="bg-gray-900">
+    <h1 class="text-4xl text-cyan-500"><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-700">
+    <%- include('partials/header') %>
+    <div class="container mx-auto">
+      <div class="flex justify-center items-center h-screen">
+        <form action="" class="bg-gray-100 rounded shadow-lg p-4 w-2/5">
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="name"
+            placeholder="Name"
+          />
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="email"
+            name="name"
+            placeholder="Email"
+          />
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="name"
+            placeholder="Country"
+          />
+          <input
+            type="submit"
+            value="Submit"
+            class="block cursor-pointer p-3 bg-red-400 text-white rounded w-full hover:bg-red-500"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<div class="container"></div>
