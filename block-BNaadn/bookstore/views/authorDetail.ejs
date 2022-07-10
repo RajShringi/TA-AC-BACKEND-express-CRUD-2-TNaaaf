@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-700">
+    <%- include('partials/header') %>
+    <div class="container mx-auto">
+      <h1 class="text-2xl text-red-400 font-bold text-center my-4">
+        <%= author.name %>
+      </h1>
+      <% if(author.books.length === 0) { %>
+      <h1 class="text-center my-4 text-2xl">No books</h1>
+      <% } else { %>
+      <div class="flex justify-between items-center mb-8">
+        <% author.books.forEach(book => { %>
+        <a
+          href="/books/<%= book.id %>"
+          class="basis-1/4 shadow rounded p-4 my-4 text-center"
+        >
+          <img
+            class="object-cover mx-auto"
+            src="<%= book.cover_image %>"
+            alt=""
+          />
+          <h1 class="text-red-400 my-2 font-bold text-lg"><%= book.title %></h1>
+          <p class="text-gray-500"><%= book.summary.substring(0, 100) %>...</p>
+        </a>
+        <% }) %>
+      </div>
+      <% } %>
+      <div>
+        <form
+          action="/authors/<%= author.id %>/books"
+          method="post"
+          class="bg-gray-100 rounded shadow-lg p-4 w-2/5 mx-auto"
+        >
+          <h1 class="text-center text-xl font-bold text-red-400">
+            Add Book For <%= author.name %>
+          </h1>
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="title"
+            placeholder="Title"
+          />
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="summary"
+            placeholder="Summary"
+          />
+
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="number"
+            name="pages"
+            placeholder="Pages"
+          />
+
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="publication"
+            placeholder="Publication"
+          />
+
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="cover_image"
+            placeholder="URL"
+          />
+
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="category"
+            placeholder="Category comma seprated"
+          />
+
+          <input
+            type="submit"
+            value="Add Book"
+            class="block cursor-pointer p-3 bg-red-400 text-white rounded w-full hover:bg-red-500"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<div class="container"></div>

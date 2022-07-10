@@ -5,20 +5,31 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body class="text-gray-500">
+    <%- include('partials/header')%>
     <div class="container mx-auto">
-      <h1><%= book.title %></h1>
-      <p><%= book.category.join(' ') %></p>
+      <h1 class="my-4 font-bold text-gray-500 text-2xl"><%= book.title %></h1>
+      <% book.category.forEach(category => { %>
+      <span
+        class="bg-red-400 py-2 px-4 text-white mr-4 my-4 inline-block rounded"
+        ><a href="/books/<%= category %>/category"><%= category %></a></span
+      >
+      <% }) %>
+      <p class="text-xl text-gray-400 font-bold my-4">
+        <a href="/authors/<%= book.author_id.id %>"
+          ><%= book.author_id.name %></a
+        >
+      </p>
       <p><%= book.summary %></p>
       <p><%= book.author %></p>
       <p class="my-4"><%= book.publication %></p>
       <a
         href="/books/<%= book.id %>/edit"
-        class="px-4 py-2 bg-red-400 rounded text-white inline-block"
+        class="px-4 py-2 bg-blue-400 rounded text-white inline-block"
         >Edit</a
       >
       <a
         href="/books/<%= book.id %>/delete"
-        class="px-4 py-2 bg-red-400 rounded text-white inline-block"
+        class="px-4 py-2 ml-4 bg-red-600 rounded text-white inline-block"
         >Delete</a
       >
     </div>
