@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="text-gray-700">
+    <%- include('partials/header') %>
+    <div class="container mx-auto">
+      <div class="flex justify-center items-center h-screen">
+        <form
+          action="/authors"
+          method="post"
+          class="bg-gray-100 rounded shadow-lg p-4 w-2/5"
+        >
+          <h1 class="text-center text-xl font-bold text-red-400">Add Author</h1>
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="name"
+            placeholder="Author's Name"
+          />
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="email"
+            name="email"
+            placeholder="Email"
+          />
+          <input
+            class="block p-2 my-4 w-full focus: outline-none"
+            type="text"
+            name="country"
+            placeholder="Country"
+          />
+
+          <input
+            type="submit"
+            value="Add Author"
+            class="block cursor-pointer p-3 bg-red-400 text-white rounded w-full hover:bg-red-500"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<div class="container"></div>
